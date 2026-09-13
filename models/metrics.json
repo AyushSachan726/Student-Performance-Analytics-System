@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-09-13T20:41:09.374001",
+  "best_model_name": "Ridge_Regression",
+  "regression_metrics": {
+    "r2_score": 0.8439,
+    "rmse": 3.9763,
+    "mae": 3.1418,
+    "explained_variance": 0.8447
+  },
+  "classification_accuracy": 0.9083,
+  "all_model_results": {
+    "Ridge_Regression": {
+      "r2_score": 0.8439,
+      "rmse": 3.9763,
+      "mae": 3.1418,
+      "explained_variance": 0.8447
+    },
+    "Random_Forest_Regressor": {
+      "r2_score": 0.8374,
+      "rmse": 4.0578,
+      "mae": 3.1939,
+      "explained_variance": 0.8376
+    },
+    "Gradient_Boosting_Regressor": {
+      "r2_score": 0.836,
+      "rmse": 4.0754,
+      "mae": 3.1929,
+      "explained_variance": 0.8364
+    }
+  },
+  "top_features": [
+    {
+      "feature": "english_score",
+      "importance": 2.939
+    },
+    {
+      "feature": "math_score",
+      "importance": 2.7228
+    },
+    {
+      "feature": "stem_average",
+      "importance": 2.6748
+    },
+    {
+      "feature": "science_score",
+      "importance": 2.1602
+    },
+    {
+      "feature": "attendance_rate",
+      "importance": 0.7999
+    },
+    {
+      "feature": "study_hours_per_week",
+      "importance": 0.7107
+    },
+    {
+      "feature": "parental_education_High School",
+      "importance": 0.6557
+    },
+    {
+      "feature": "study_attendance_index",
+      "importance": 0.5244
+    }
+  ],
+  "training_samples": 960,
+  "test_samples": 240
+}
