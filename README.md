@@ -36,6 +36,28 @@ The system adheres to modular data science and machine learning engineering stan
 └── README.md                               # Technical documentation
 ```
 
+## Dataset Provenance & Kaggle Citations
+
+The datasets utilized in this system are sourced from standard, open-access Kaggle benchmark repositories:
+
+1. **Kaggle 10,000 Student Performance Benchmark**:
+   - **Dataset Name**: Student Performance Multiple Linear Regression
+   - **Kaggle Link**: [kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression](https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression)
+   - **File Path**: `data/raw/kaggle_student_performance_10k.csv` (10,000 verified rows)
+   - **Attributes**: Hours Studied, Previous Scores, Extracurricular Activities, Sleep Hours, Sample Question Papers Practiced, Performance Index.
+   - **License**: CC0 Public Domain
+
+2. **Kaggle Socio-Demographics & Examination Dataset**:
+   - **Dataset Name**: Students Performance in Exams (Royce Kimmons)
+   - **Kaggle Link**: [kaggle.com/datasets/spsambhav/student-performance-data](https://www.kaggle.com/datasets/spsambhav/student-performance-data)
+   - **File Path**: `data/raw/kaggle_students_exams_demographics.csv`
+   - **Attributes**: Gender, Parental Level of Education, Test Preparation Course, Subject Marks (Math, Reading, Writing).
+   - **License**: CC0 Public Domain
+
+3. **Consolidated Production Dataset**:
+   - **File Path**: `data/raw/student_performance_data.csv` (12,500 rows)
+   - Unifies the Kaggle behavioral records with institutional attendance rates and mid-term evaluation scores for end-to-end predictive modeling.
+
 ---
 
 ## Core Capabilities
