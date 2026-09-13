@@ -194,7 +194,7 @@ except Exception:
 if "custom_df" not in st.session_state:
     st.session_state.custom_df = None
 if "data_source_name" not in st.session_state:
-    st.session_state.data_source_name = "Default Database (1,200 records)"
+    st.session_state.data_source_name = "Default Database (12,500 records)"
 
 
 # ─── Chart Styling Helper for Raisin Black & Warm Gold ───────────
@@ -262,7 +262,7 @@ if uploaded_file is not None:
         has_pred_cols = all(col in user_df.columns for col in req_pred_cols)
         
         if "final_score" not in user_df.columns and has_pred_cols and predictor is not None:
-            if st.sidebar.button("Run Model Inference on Uploaded CSV", use_container_width=True):
+            if st.sidebar.button("Run Model Inference on Uploaded CSV", width='stretch'):
                 with st.spinner("Generating AI predictions for uploaded dataset..."):
                     pred_scores = []
                     pred_risks = []
@@ -281,7 +281,7 @@ if uploaded_file is not None:
                         user_df["name"] = [f"Student {i+1}" for i in range(len(user_df))]
                 st.sidebar.success("Predictions generated!")
                 
-        if st.sidebar.button("Apply Uploaded Data to Dashboard", use_container_width=True):
+        if st.sidebar.button("Apply Uploaded Data to Dashboard", width='stretch'):
             st.session_state.custom_df = user_df
             st.session_state.data_source_name = f"Uploaded: {uploaded_file.name} ({len(user_df)} records)"
             st.rerun()
@@ -290,9 +290,9 @@ if uploaded_file is not None:
         st.sidebar.error(f"Error reading CSV: {err}")
 
 if st.session_state.custom_df is not None:
-    if st.sidebar.button("Reset to Default Dataset", use_container_width=True):
+    if st.sidebar.button("Reset to Default Dataset", width='stretch'):
         st.session_state.custom_df = None
-        st.session_state.data_source_name = "Default Database (1,200 records)"
+        st.session_state.data_source_name = "Default Database (12,500 records)"
         st.rerun()
 
 # Download Sample CSV template
@@ -303,7 +303,7 @@ st.sidebar.download_button(
     data=sample_csv,
     file_name="sample_student_template.csv",
     mime="text/csv",
-    use_container_width=True
+    width='stretch'
 )
 
 st.sidebar.markdown("---")
@@ -368,7 +368,7 @@ if menu == "Dashboard & Overview":
         )
         fig_hist.update_layout(bargap=0.08)
         style_chart(fig_hist)
-        st.plotly_chart(fig_hist, use_container_width=True)
+        st.plotly_chart(fig_hist, width='stretch')
 
     with col_right:
         st.subheader("Cohort Risk Breakdown")
@@ -384,7 +384,7 @@ if menu == "Dashboard & Overview":
                 hole=0.45
             )
             style_chart(fig_pie)
-            st.plotly_chart(fig_pie, use_container_width=True)
+            st.plotly_chart(fig_pie, width='stretch')
         else:
             st.info("No risk_level column available in this dataset.")
 
@@ -404,7 +404,7 @@ if menu == "Dashboard & Overview":
         )
         fig_scatter.add_vline(x=75, line_dash="dash", line_color="#EBCC98", annotation_text="75% Min Attendance", annotation_font_color="#EBCC98")
         style_chart(fig_scatter)
-        st.plotly_chart(fig_scatter, use_container_width=True)
+        st.plotly_chart(fig_scatter, width='stretch')
 
     with col_b:
         st.subheader("Average Subject Scores by Grade Level")
@@ -420,7 +420,7 @@ if menu == "Dashboard & Overview":
                 color_discrete_sequence=["#CDA175", "#EBCC98", "#9E7B58"]
             )
             style_chart(fig_bar)
-            st.plotly_chart(fig_bar, use_container_width=True)
+            st.plotly_chart(fig_bar, width='stretch')
         else:
             st.info("Subject scores or grade_level column not available for breakdown.")
 
@@ -451,7 +451,7 @@ elif menu == "Visual Analytics & EDA":
                 title="Correlation Matrix (Pearson)"
             )
             style_chart(fig_corr)
-            st.plotly_chart(fig_corr, use_container_width=True)
+            st.plotly_chart(fig_corr, width='stretch')
         else:
             st.info("Not enough numeric columns for correlation heatmap.")
 
@@ -470,7 +470,7 @@ elif menu == "Visual Analytics & EDA":
                 labels={"study_hours_per_week": "Study Hours / Week", "final_score": "Final Score"}
             )
             style_chart(fig_prep)
-            st.plotly_chart(fig_prep, use_container_width=True)
+            st.plotly_chart(fig_prep, width='stretch')
         else:
             st.info("Columns study_hours_per_week or final_score not available.")
 
@@ -488,7 +488,7 @@ elif menu == "Visual Analytics & EDA":
             )
             fig_edu.update_layout(showlegend=False)
             style_chart(fig_edu)
-            st.plotly_chart(fig_edu, use_container_width=True)
+            st.plotly_chart(fig_edu, width='stretch')
         else:
             st.info("parental_education column not available in dataset.")
 
@@ -535,7 +535,7 @@ elif menu == "AI Performance Predictor":
             with sc3:
                 english_score = st.slider("English Score", 20.0, 100.0, 76.0, 1.0)
                 
-            submit_btn = st.form_submit_button("Run AI Prediction & Analysis", use_container_width=True)
+            submit_btn = st.form_submit_button("Run AI Prediction & Analysis", width='stretch')
 
         if submit_btn:
             input_data = {
@@ -590,7 +590,7 @@ elif menu == "Student Records & Risk Alerts":
             try:
                 uploaded_in_df = pd.read_csv(inpage_file, keep_default_na=False)
                 st.write(f"Preview of uploaded CSV ({len(uploaded_in_df)} rows):")
-                st.dataframe(uploaded_in_df.head(4), use_container_width=True)
+                st.dataframe(uploaded_in_df.head(4), width='stretch')
                 
                 req_pred_cols = [
                     "gender", "age", "grade_level", "parental_education",
@@ -668,7 +668,7 @@ elif menu == "Student Records & Risk Alerts":
             "final_score", "risk_level", "passed"
         ] if c in filtered_df.columns
     ]
-    st.dataframe(filtered_df[display_cols], use_container_width=True, height=450)
+    st.dataframe(filtered_df[display_cols], width='stretch', height=450)
 
     # Export CSV
     csv_data = filtered_df.to_csv(index=False).encode("utf-8")
@@ -715,7 +715,7 @@ elif menu == "Model Diagnostics & Explainability":
             )
             fig_feat.update_layout(yaxis={"autorange": "reversed"})
             style_chart(fig_feat)
-            st.plotly_chart(fig_feat, use_container_width=True)
+            st.plotly_chart(fig_feat, width='stretch')
 
         st.subheader("Model Tournament Benchmark Comparison")
         model_results = metrics_data.get("all_model_results", {})

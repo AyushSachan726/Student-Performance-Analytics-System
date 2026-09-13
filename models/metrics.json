@@ -1,67 +1,67 @@
 {
-  "timestamp": "2026-09-13T20:41:09.374001",
+  "timestamp": "2026-09-13T21:02:33.537139",
   "best_model_name": "Ridge_Regression",
   "regression_metrics": {
-    "r2_score": 0.8439,
-    "rmse": 3.9763,
-    "mae": 3.1418,
-    "explained_variance": 0.8447
+    "r2_score": 0.847,
+    "rmse": 3.9766,
+    "mae": 3.1944,
+    "explained_variance": 0.8471
   },
-  "classification_accuracy": 0.9083,
+  "classification_accuracy": 0.8896,
   "all_model_results": {
     "Ridge_Regression": {
-      "r2_score": 0.8439,
-      "rmse": 3.9763,
-      "mae": 3.1418,
-      "explained_variance": 0.8447
+      "r2_score": 0.847,
+      "rmse": 3.9766,
+      "mae": 3.1944,
+      "explained_variance": 0.8471
     },
     "Random_Forest_Regressor": {
-      "r2_score": 0.8374,
-      "rmse": 4.0578,
-      "mae": 3.1939,
-      "explained_variance": 0.8376
+      "r2_score": 0.8387,
+      "rmse": 4.0833,
+      "mae": 3.2822,
+      "explained_variance": 0.8388
     },
     "Gradient_Boosting_Regressor": {
-      "r2_score": 0.836,
-      "rmse": 4.0754,
-      "mae": 3.1929,
-      "explained_variance": 0.8364
+      "r2_score": 0.8421,
+      "rmse": 4.0404,
+      "mae": 3.2529,
+      "explained_variance": 0.8422
     }
   },
   "top_features": [
     {
       "feature": "english_score",
-      "importance": 2.939
+      "importance": 2.9736
     },
     {
       "feature": "math_score",
-      "importance": 2.7228
+      "importance": 2.6756
     },
     {
       "feature": "stem_average",
-      "importance": 2.6748
+      "importance": 2.5768
     },
     {
       "feature": "science_score",
-      "importance": 2.1602
+      "importance": 2.0155
     },
     {
       "feature": "attendance_rate",
-      "importance": 0.7999
+      "importance": 0.8861
     },
     {
       "feature": "study_hours_per_week",
-      "importance": 0.7107
-    },
-    {
-      "feature": "parental_education_High School",
-      "importance": 0.6557
+      "importance": 0.3118
     },
     {
       "feature": "study_attendance_index",
-      "importance": 0.5244
+      "importance": 0.2624
+    },
+    {
+      "feature": "previous_score",
+      "importance": 0.1952
     }
   ],
-  "training_samples": 960,
-  "test_samples": 240
+  "training_samples": 10000,
+  "test_samples": 2500
 }
