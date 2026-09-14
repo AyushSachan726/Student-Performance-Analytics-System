@@ -1,5 +1,15 @@
 # Student Performance Analytics System
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-performance-analytics-system-2bsvbikijhyffkggunty5i.streamlit.app/)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4+-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> 🌐 **Live Web Application (Streamlit Cloud):**  
+> 👉 **[https://student-performance-analytics-system-2bsvbikijhyffkggunty5i.streamlit.app/](https://student-performance-analytics-system-2bsvbikijhyffkggunty5i.streamlit.app/)**  
+> *(Directly accessible on browser without any installation)*
+
 An enterprise-grade Machine Learning and Data Science platform engineered to evaluate academic health, forecast student examination outcomes, detect at-risk cohorts, and deliver actionable educational interventions through an asynchronous FastAPI service and an interactive Streamlit analytics portal.
 
 ---
